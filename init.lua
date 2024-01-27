@@ -248,3 +248,17 @@ vim.api.nvim_create_autocmd("TermOpen", {
 -- Beautiful colorscheme
 vim.cmd [[colorscheme aylin]]
 -- }}}
+-- windows/neovide config {{{
+
+-- I don't plan to use neovide outside windows, that's why I'm setting the
+-- shell to an exe in case of neovide.
+if vim.g.neovide then
+    vim.o.shell = "bash.exe"
+    vim.o.guifont = "mononoki:h12"
+    -- vim.o.guifont = "Spleen 32x64:h12"
+    -- vim.o.guifont = "Geist Mono:h12"
+    -- vim.g.neovide_fullscreen = true
+    -- TODO: add keybindings to change font size later
+end
+
+-- }}}
