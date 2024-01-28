@@ -114,12 +114,14 @@ keymap.set("n", "<leader>fh", telescope.help_tags, {})
 
 local telescope_actions = require("telescope.actions")
 require("telescope").setup({
-    mappings = {
-        i = {
-            ["<C-n>"] = false,
-            ["<C-p>"] = false,
-            ["<C-j>"] = telescope_actions.move_selection_next,
-            ["<C-k>"] = telescope_actions.move_selection_previous,
+    defaults = {
+        mappings = {
+            i = {
+                ["<C-n>"] = false,
+                ["<C-p>"] = false,
+                ["<C-j>"] = telescope_actions.move_selection_next,
+                ["<C-k>"] = telescope_actions.move_selection_previous,
+            }
         }
     }
 })
