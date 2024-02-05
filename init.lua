@@ -46,11 +46,20 @@ keymap.set("n", "<leader>w=", "<C-w>=")
 keymap.set("n", "<leader>wq", "<C-w>q")
 keymap.set("n", "<leader>ww", "<C-w>w")
 
+-- Saving without modifier keys
+keymap.set("n", "<leader>fw", ":<C-u>w<CR>", { silent = true })
+
+-- Make current buffer's file executable
+keymap.set("n", "<leader>fx", ":<C-u>!chmod +x %<CR>")
+
 -- Cleaning search highlights
 keymap.set("n", "<ESC>", ":<C-u>noh<CR>", { silent = true })
 
 -- Easier folding/unfolding
 keymap.set("n", "<TAB>", "za")
+
+-- Open config on new tab
+keymap.set("n", "<leader>c", ":<C-u>tabnew $MYVIMRC<CR>")
 -- }}}
 -- plugin manager/plugins {{{
 
@@ -95,6 +104,7 @@ require("lazy").setup({
     "whatyouhide/gotham",
     "dracula/vim",
     "nelstrom/vim-mac-classic-theme",
+    "rebelot/kanagawa.nvim",
 
     -- The closer to org mode I've found on vim
     {
@@ -185,7 +195,7 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = {'tsserver', 'rust_analyzer'},
+    ensure_installed = {'tsserver', 'rust_analyzer', 'zls'},
     handlers = {
         lsp_zero.default_setup,
         lua_ls = function()
