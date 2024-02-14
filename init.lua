@@ -21,6 +21,9 @@ vim.opt.mouse = "a"
 vim.opt.number = true
 vim.opt.relativenumber = true
 
+-- Highlight cursor line
+vim.opt.cursorline = true
+
 -- Incremental search
 vim.opt.incsearch = true
 
@@ -87,6 +90,7 @@ require("lazy").setup({
     },
     
     "sheerun/vim-polyglot",         -- Supports many languages, including org and json
+    "gmoe/vim-faust",               -- Faust language for audio plugin creation
     "tpope/vim-commentary",         -- Useful to comment/uncomment lines and blocks
     "lilydjwg/colorizer",           -- Renders colors (like #fafaca). Pretty.
     "mbbill/undotree",              -- Better undo handling

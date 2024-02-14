@@ -27,6 +27,7 @@
   "vim": { "branch": "master", "commit": "6495b4ff40479ec7705addb4ea800ec308026648" },
   "vim-commentary": { "branch": "master", "commit": "f67e3e67ea516755005e6cccb178bc8439c6d402" },
   "vim-endwise": { "branch": "master", "commit": "3719ffddb5e42bf67b55b2183d7a6fb8d3e5a2b8" },
+  "vim-faust": { "branch": "main", "commit": "6c329ddf32349e4f161e0c7a3570ad095fd8acc8" },
   "vim-fugitive": { "branch": "master", "commit": "e7bf502a6ae492f42a91d231864e25630286319b" },
   "vim-mac-classic-theme": { "branch": "master", "commit": "8bf9e3d96a0988849e8dd9954d443857191c8639" },
   "vim-multiple-cursors": { "branch": "master", "commit": "6456718e1d30b42c04b920c5413ca44f68f08759" },
