@@ -63,6 +63,14 @@ keymap.set("n", "<TAB>", "za")
 
 -- Open config on new tab
 keymap.set("n", "<leader>c", ":<C-u>tabnew $MYVIMRC<CR>")
+
+-- Start substitution
+keymap.set("n", "<leader>s", ":%s/")
+keymap.set("v", "<leader>s", ":s/")
+
+-- Enter capture on command line mode (for easier captured substitutions)
+keymap.set("c", "<C-.>", "\\(.\\+\\)")
+
 -- }}}
 -- plugin manager/plugins {{{
 
