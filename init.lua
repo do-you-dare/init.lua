@@ -33,6 +33,12 @@ vim.opt.scrolloff = 6
 -- Conceals quotes on json files, making them more readable
 vim.g.vim_json_syntax_conceal = 1
 
+-- Doesn't show help banner whe navigating through directories
+vim.g.netrw_banner = 0
+
+-- Start netrw with hidden files hidden
+vim.g.netrw_list_hide = "\\(^\\|\\s\\s\\)\\zs\\.\\S\\+"
+
 -- }}}
 -- remaps {{{
 
@@ -64,12 +70,18 @@ keymap.set("n", "<TAB>", "za")
 -- Open config on new tab
 keymap.set("n", "<leader>c", ":<C-u>tabnew $MYVIMRC<CR>")
 
+-- New tab
+keymap.set("n", "<leader>t", ":<C-u>tabnew<CR>")
+
 -- Start substitution
 keymap.set("n", "<leader>s", ":%s/")
 keymap.set("v", "<leader>s", ":s/")
 
 -- Enter capture on command line mode (for easier captured substitutions)
 keymap.set("c", "<C-.>", "\\(.\\+\\)")
+
+-- Wrap current paragraph
+keymap.set("n", "<leader>i", "gwip", { silent = true })
 
 -- }}}
 -- plugin manager/plugins {{{
@@ -99,6 +111,7 @@ require("lazy").setup({
     
     "sheerun/vim-polyglot",         -- Supports many languages, including org and json
     "gmoe/vim-faust",               -- Faust language for audio plugin creation
+    "terrastruct/d2-vim",           -- D2 lang for fancy diagrams
     "tpope/vim-commentary",         -- Useful to comment/uncomment lines and blocks
     "lilydjwg/colorizer",           -- Renders colors (like #fafaca). Pretty.
     "mbbill/undotree",              -- Better undo handling
@@ -117,12 +130,6 @@ require("lazy").setup({
     "dracula/vim",
     "nelstrom/vim-mac-classic-theme",
     "rebelot/kanagawa.nvim",
-
-    -- The closer to org mode I've found on vim
-    {
-        "nvim-neorg/neorg",
-        build = "Neorg sync-parsers"
-    },
 
     -- LSP related plugins
     {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
@@ -157,17 +164,6 @@ require("telescope").setup({
                 ["<C-j>"] = telescope_actions.move_selection_next,
                 ["<C-k>"] = telescope_actions.move_selection_previous,
             }
-        }
-    }
-})
--- }}}
--- Neorg config {{{
-require("neorg").setup({
-    load = {
-        ["core.defaults"] = {},
-        ["core.concealer"] = {},
-        ["core.dirman"] = {
-            config = { notes = "~/notes" }
         }
     }
 })
