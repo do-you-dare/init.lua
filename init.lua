@@ -264,5 +264,5 @@ vim.api.nvim_create_autocmd("TermOpen", {
 })
 
 -- Beautiful colorscheme
-vim.cmd [[colorscheme aylin]]
+vim.cmd [[colorscheme sorbet]]
 -- }}}
