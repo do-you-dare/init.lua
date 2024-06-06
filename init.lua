@@ -21,6 +21,9 @@ vim.opt.mouse = "a"
 vim.opt.number = true
 vim.opt.relativenumber = true
 
+-- Marker folding
+vim.opt.foldmethod = 'marker'
+
 -- Highlight cursor line
 vim.opt.cursorline = true
 
@@ -55,6 +58,9 @@ keymap.set("n", "<leader>w=", "<C-w>=")
 keymap.set("n", "<leader>wq", "<C-w>q")
 keymap.set("n", "<leader>ww", "<C-w>w")
 
+-- Open current window in a newtab
+keymap.set("n", "<leader>wt", ":<C-u>tabnew %<Enter>", { silent = true })
+
 -- Saving without modifier keys
 keymap.set("n", "<leader>fw", ":<C-u>w<CR>", { silent = true })
 
@@ -73,9 +79,16 @@ keymap.set("n", "<leader>c", ":<C-u>tabnew $MYVIMRC<CR>")
 -- New tab
 keymap.set("n", "<leader>t", ":<C-u>tabnew<CR>")
 
+-- Open file explorer on current buffer
+keymap.set("n", "<leader>e", ":<C-u>Ex<CR>")
+
 -- Start substitution
 keymap.set("n", "<leader>s", ":%s/")
 keymap.set("v", "<leader>s", ":s/")
+
+-- Easier send to clipboard
+keymap.set("n", "<leader>y", "\"+y", { silent = true })
+keymap.set("v", "<leader>y", "\"+y", { silent = true })
 
 -- Enter capture on command line mode (for easier captured substitutions)
 keymap.set("c", "<C-.>", "\\(.\\+\\)")
